@@ -20,7 +20,7 @@ drop table if exists position;
 
 create table position (
 positionID tinyint primary key auto_increment,
-positionName enum ('dev', 'test', 'scrum master', 'pm')
+positionName varchar(50)
 );
 
 /*account */
