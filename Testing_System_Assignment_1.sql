@@ -9,7 +9,7 @@ use testingsystem;
 
 drop table if exists department;
 
-create table department (account
+create table department (
 departmentID tinyint primary key auto_increment,
 departmentName varchar(50) not null unique
 );
