@@ -9,7 +9,7 @@ use testingsystem;
 
 drop table if exists department;
 
-create table department (account
+create table department (
 departmentID tinyint primary key auto_increment,
 departmentName varchar(50) not null unique
 );
@@ -20,7 +20,7 @@ drop table if exists position;
 
 create table position (
 positionID tinyint primary key auto_increment,
-positionName enum ('dev', 'test', 'scrum master', 'pm')
+positionName varchar(50)
 );
 
 /*account */
