@@ -14,12 +14,12 @@ departmentID tinyint primary key auto_increment,
 departmentName varchar(50) not null unique
 );
 
-insert into department (departmentID, departmentName) 
-values (1, 'sale'), 
-(2, 'marketing'),
-(3, 'ke toan'),
-(4, 'hanh chinh'),
-(5, 'giam doc')
+insert into department (departmentName) 
+values ('sale'), 
+('marketing'),
+('ke toan'),
+('hanh chinh'),
+('giam doc')
 ;
 
 /* position */
@@ -31,13 +31,13 @@ positionID tinyint primary key auto_increment,
 positionName varchar(50)
 );
 
-insert into position (positionID, positionName)
-values (1, 'dev'),
-(2, 'tester'),
-(3, 'pm'),
-(4, 'scrum master'),
-(5, 'QA'),
-(6, 'Leader')
+insert into position (positionName)
+values ('dev'),
+('tester'),
+('pm'),
+('scrum master'),
+('QA'),
+('Leader')
 ;
 
 /*account */
@@ -54,12 +54,12 @@ positionID  tinyint,
 createDate date
 );
 
-insert into `account` (accountID, email, username, fullname, departmentID, positionID, createDate)
-values (1, 'lanct131@wru.vn', 'lanct131', 'cao thuy lan', 8, 2, '2021-03-11'),
-(2, 'hoann12@wru.vn', 'hoant12', 'nguyen ngoc hoa', 6, 3, '2021-01-10'),
-(3, 'linhnt15@wru.vn', 'linhnt15', 'nguyen thuy linh', 4, 6, '2021-05-17'),
-(4, 'namvt15@wru.vn', 'namvt15', 'vu tuan nam', 23, 15, '2021-02-23'),
-(5, 'thanhnnt14@wru.vn', 'thanhnnt14', 'tran nguyen ngoc thanh', 12,31, '2021-03-15')
+insert into `account` (email, username, fullname, departmentID, positionID, createDate)
+values ('lanct131@wru.vn', 'lanct131', 'cao thuy lan', 8, 2, '2021-03-11'),
+('hoann12@wru.vn', 'hoant12', 'nguyen ngoc hoa', 6, 3, '2021-01-10'),
+('linhnt15@wru.vn', 'linhnt15', 'nguyen thuy linh', 4, 6, '2021-05-17'),
+('namvt15@wru.vn', 'namvt15', 'vu tuan nam', 23, 15, '2021-02-23'),
+('thanhnnt14@wru.vn', 'thanhnnt14', 'tran nguyen ngoc thanh', 12,31, '2021-03-15')
 ;
 
 /*group */
@@ -72,12 +72,12 @@ groupName varchar(50) not null,
 createdDate date
 );
 
-insert into `group` (groupID, groupName, createdDate)
-values (1, 'Nhom 3', '2021-02-11'),
-(2, 'Nhom 5', '2021-01-20'),
-(3, 'Nhom 3', '2021-04-24'),
-(4, 'Nhom 4', '2021-05-19'),
-(5, 'Nhom 5', '2021-04-16')
+insert into `group` (groupName, createdDate)
+values ('Nhom 3', '2021-02-11'),
+('Nhom 5', '2021-01-20'),
+('Nhom 3', '2021-04-24'),
+('Nhom 4', '2021-05-19'),
+('Nhom 5', '2021-04-16')
 ;
 
 /* GroupAccount */
@@ -107,9 +107,9 @@ categoryID tinyint primary key auto_increment,
 categoryName varchar(50)
 );
 
-insert into typeQuestion (categoryID, categoryName)
-value (1, 'trac nghiem'),
-(2, 'tu luan')
+insert into typeQuestion (categoryName)
+value ('trac nghiem'),
+('tu luan')
 ;
 
 /*question */
@@ -125,12 +125,12 @@ creatorID tinyint,
 createdate date
 );
 
-insert into Question (questionID, content, categoryID, typeID, creatorID, createdate)
-values (1, 'cau 2 khong hieu de bai', 1, 4, 5, '2021-01-03'),
-(2, 'cau 10 sai de bai', 4, 5, 3, '2021-02-01'),
-(3, 'cau 19 bi trung cau 5', 3, 6, 2, '2021-01-18'),
-(4, 'cau 16 thieu du lieu', 4, 6, 21, '2021-03-15'),
-(5, 'cau 25 khong co dap an dung', 4, 6, 3, '2021-04-13')
+insert into Question (content, categoryID, typeID, creatorID, createdate)
+values ('cau 2 khong hieu de bai', 1, 4, 5, '2021-01-03'),
+('cau 10 sai de bai', 4, 5, 3, '2021-02-01'),
+('cau 19 bi trung cau 5', 3, 6, 2, '2021-01-18'),
+('cau 16 thieu du lieu', 4, 6, 21, '2021-03-15'),
+('cau 25 khong co dap an dung', 4, 6, 3, '2021-04-13')
 ;
 
 /*answer */
@@ -144,12 +144,12 @@ questionID tinyint,
 isCorrect boolean
 );
 
-insert into answer (answerID, content, questionID, isCorrect)
-values (1, 'dap an la 43', 13, 1),
-(2, 'dap an bi nham', 21, 0),
-(3, 'de bai khong sai', 24, 0),
-(4, 'dap an la 17', 4, 0),
-(5, 'dap an bi trung', 6, 1)
+insert into answer (content, questionID, isCorrect)
+values ('dap an la 43', 13, 1),
+('dap an bi nham', 21, 0),
+('de bai khong sai', 24, 0),
+('dap an la 17', 4, 0),
+('dap an bi trung', 6, 1)
 ;
 
 /*exam */
@@ -166,12 +166,12 @@ creatorID mediumint,
 createDate date
 );
 
-insert into exam (examID, `code`, title, categoryID, duration, creatorID, createDate)
-values (1, 'MS_01', 'de thi 01', 6, '01:00:00', 1, '2021-04-02'),
-(2, 'MS_02', 'de thi 02', 2, '01:30:00', 4, '2021-04-02'),
-(3, 'MS_03', 'de thi 03', 3, '03:00:00', 1, '2021-04-02'),
-(4, 'MS_04', 'de thi 04', 2, '01:00:00', 3, '2021-04-02'),
-(5, 'MS_05', 'de thi 05', 1, '02:00:00', 2, '2021-04-02')
+insert into exam (`code`, title, categoryID, duration, creatorID, createDate)
+values ('MS_01', 'de thi 01', 6, '01:00:00', 1, '2021-04-02'),
+('MS_02', 'de thi 02', 2, '01:30:00', 4, '2021-04-02'),
+('MS_03', 'de thi 03', 3, '03:00:00', 1, '2021-04-02'),
+('MS_04', 'de thi 04', 2, '01:00:00', 3, '2021-04-02'),
+('MS_05', 'de thi 05', 1, '02:00:00', 2, '2021-04-02')
 ;
 
 /*examQuestion */
@@ -189,4 +189,3 @@ values (1, 2),
 (4, 3),
 (5, 9)
 ;
-
