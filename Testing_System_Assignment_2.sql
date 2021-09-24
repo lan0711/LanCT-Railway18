@@ -166,8 +166,8 @@ references TypeQuestion (typeID) on delete set null on update cascade
 insert into Question (content, categoryID, typeID, creatorID, createdate)
 values ('cau 2 khong hieu de bai', 2, 1, 1, '2021-01-11'),
 ('cau 10 sai de bai', 2, 1, 2, '2021-02-10'),
-('cau 19 bi trung cau 5', 4, 3, 3, '2021-03-17'),
-('cau 16 thieu du lieu', 4, 4, 4, '2021-04-23'),
+('cau 19 bi trung cau 5', 4, 2, 3, '2021-03-17'),
+('cau 16 thieu du lieu', 4, 1, 4, '2021-04-23'),
 ('cau 25 khong co dap an dung', 5, 1, 5, '2021-05-15')
 ;
 
