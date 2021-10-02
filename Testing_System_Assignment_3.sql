@@ -303,10 +303,15 @@ from `account`
 where length(fullname)= (select max(length(fullname)) from `account`)
 ;
 -- Question 5
-with de3 as (select * from `account` where departmentId=3)
-select * from de3
-where length(fullname)= (select max(length(fullname)) from `de3`)
-;
+with cte_ac_dp3 as (select * from `account` where departmentId = 3)
+select * from cte_ac_dp3
+where length(fullname)= (select max(length(fullname)) from `cte_ac_dp3`);
+
+-- or question 5:
+select * 
+from `account` 
+where length(fullname) = (select max(length(fullname)) from `account`) and departmentID = 3;
+
 -- question 6:
 select groupname
 from `group`
